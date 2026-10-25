@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Synapse ONE Games: TikTok authorization</title>
+<style>
+:root{color-scheme:dark;--bg:#09151b;--card:#10222a;--ink:#f3ebdb;--muted:#aab9b9;--gold:#ffbe77}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Segoe UI",Arial,sans-serif}
+main{width:min(560px,calc(100% - 32px));margin:48px auto}
+h1{font:normal 26px/1.2 Georgia,serif;margin:0 0 12px}
+p{color:var(--muted)}
+.box{background:var(--card);border:1px solid #ffffff1c;border-radius:12px;padding:16px;margin:16px 0}
+code{display:block;word-break:break-all;font-size:15px;color:var(--ink)}
+button{margin-top:12px;background:var(--gold);color:#18232a;border:0;border-radius:8px;padding:10px 16px;font-weight:700;cursor:pointer}
+</style></head>
+<body><main>
+<h1>TikTok authorization</h1>
+<p id="lead">Copy this code into <b>python tt.py exchange &lt;account&gt;</b> within 10 minutes. It works once.</p>
+<div class="box"><code id="code">No code in this link.</code><button id="copy" hidden>Copy code</button></div>
+<p id="extra"></p>
+</main>
+<script>
+var q = new URLSearchParams(location.search), c = q.get('auth_code') || q.get('code'), e = q.get('error');
+if (c) { document.getElementById('code').textContent = c; var b = document.getElementById('copy'); b.hidden = false;
+  b.onclick = function(){ navigator.clipboard.writeText(c).then(function(){ b.textContent = 'Copied'; }); }; }
+if (e) document.getElementById('extra').textContent = 'TikTok returned: ' + e + ' ' + (q.get('error_description') || '');
+</script>
+</body></html>
