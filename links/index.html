@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#09151b"><title>Synapse ONE Games</title><meta name="description" content="Independent games from Synapse ONE: Salvage Station, Luma and Margin Runner on Google Play."><meta property="og:title" content="Synapse ONE Games"><meta property="og:description" content="Small moments. Big worlds."><meta property="og:image" content="https://marikarx.github.io/links/assets/logo.webp"><link rel="canonical" href="https://marikarx.github.io/links/"><link rel="icon" href="assets/logo.webp" type="image/webp">
+<style>
+:root{color-scheme:dark;--bg:#09151b;--card:#10222a;--ink:#f3ebdb;--muted:#aab9b9;--gold:#ffbe77;--teal:#71c8c3;--line:#ffffff1c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Segoe UI",Arial,sans-serif;min-height:100vh}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+img{display:block}
+main{width:min(480px,calc(100% - 32px));margin:auto;padding:40px 0 32px}
+header{text-align:center;margin-bottom:28px}
+.logo{width:112px;height:112px;margin:0 auto 16px;border-radius:50%;background:#fff;padding:6px}
+h1{font:normal 30px/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.02em;margin:0 0 6px}
+.tagline{color:var(--muted);margin:0;font-size:15px}
+.tagline em{font-style:normal;color:var(--gold)}
+.games{display:grid;gap:14px;list-style:none;margin:0;padding:0}
+.game{display:grid;grid-template-columns:72px 1fr;gap:4px 16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.game img{width:72px;height:72px;border-radius:16px;grid-row:span 2}
+.game h2{font-size:17px;line-height:1.25;margin:0}
+.game p{color:var(--muted);font-size:14px;margin:0}
+.play{grid-column:1/-1;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#18232a;font-weight:700;font-size:15px;border-radius:10px;padding:13px 16px;transition:background .2s}
+.play:hover{background:#ffd5a8}
+.play small{font-weight:600;opacity:.75}
+footer{margin-top:28px;text-align:center;font-size:12px;color:#7d999d}
+footer a{color:var(--teal)}
+</style></head>
+<body><main>
+<header><img class="logo" src="assets/logo.webp" alt="Synapse ONE Games logo" width="112" height="112"><h1>Synapse ONE Games</h1><p class="tagline">Small moments. <em>Big worlds.</em></p></header>
+<ul class="games">
+<li class="game"><img src="assets/salvage-station.webp" alt="" width="72" height="72"><h2>Salvage Station: Space Merge</h2><p>Merge space junk and bring a dead station back to life.</p><a class="play" data-pkg="com.synapseone.spacemerge" data-game="salvage_station" href="https://play.google.com/store/apps/details?id=com.synapseone.spacemerge&amp;referrer=utm_source%3Dweb%26utm_medium%3Dlinks%26utm_campaign%3Dsalvage_station">Get it on Google Play <small>Free</small></a></li>
+<li class="game"><img src="assets/luma.webp" alt="" width="72" height="72"><h2>Luma: A Little Lightwork</h2><p>Guide light through mirrors and prisms to wake a quiet observatory.</p><a class="play" data-pkg="com.synapseone.luma" data-game="luma" href="https://play.google.com/store/apps/details?id=com.synapseone.luma&amp;referrer=utm_source%3Dweb%26utm_medium%3Dlinks%26utm_campaign%3Dluma">Get it on Google Play <small>14 chambers free</small></a></li>
+<li class="game"><img src="assets/margin-runner.webp" alt="" width="72" height="72"><h2>Margin Runner</h2><p>Draw, erase and fold your way through a 42-page notebook platformer.</p><a class="play" data-pkg="com.synapseone.marginrunner" data-game="margin_runner" href="https://play.google.com/store/apps/details?id=com.synapseone.marginrunner&amp;referrer=utm_source%3Dweb%26utm_medium%3Dlinks%26utm_campaign%3Dmargin_runner">Get it on Google Play <small>Chapter 1 free</small></a></li>
+</ul>
+<footer><p><a href="../">Synapse One studio</a> · <a href="mailto:info@synapse-one.com">info@synapse-one.com</a></p></footer>
+</main>
+<script>
+// ?src=tiktok (or youtube, instagram...) becomes utm_source on every Play link.
+(function(){
+  var src = (new URLSearchParams(location.search).get('src') || 'web').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 32) || 'web';
+  document.querySelectorAll('a.play').forEach(function(a){
+    var ref = 'utm_source=' + src + '&utm_medium=links&utm_campaign=' + a.dataset.game;
+    a.href = 'https://play.google.com/store/apps/details?id=' + a.dataset.pkg + '&referrer=' + encodeURIComponent(ref);
+  });
+})();
+</script>
+</body></html>
